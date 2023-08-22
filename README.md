@@ -1,6 +1,7 @@
 # Rede social de séries (filmes e livros posteriormente)
 
-Desenvolver em Java um sistema de séries de Tv. Cada série contém seu nome, ano em que foi ao ar o primeiro episódio e o número de temporadas. 
+Desenvolver em Java, uma aplicação de console, de um sistema de séries de Tv. 
+Cada série contém seu nome, ano em que foi ao ar o primeiro episódio e o número de temporadas. 
 Nesse sistema o usuário poderá:
 - cadastrar uma série;
 - poderá listar as séries 
@@ -47,14 +48,12 @@ O banco de dados a ser utilizado fica a critério do desenvolvedor.
 Caso o banco seja MySQL:
 <h2>O arquivo database.sql </h2>
 Irá criar as tabelas, adicionará algumas séries, usuários, notas e comentários de usuários.
-A partir do arquivo percebee-se que vão existir 4 tabelas:
+A partir do arquivo percebe-se que vão existir 4 tabelas:
 
  - tabela de séries
  - tabela de usuários (o usuário "logado" será o com identificador igual a 1)
  - tabela de notas das séries
  - tabela de séries favoritas
 
-
-
-
+Obs: Todas as dependências necessárias já estão no pom.xml
 
