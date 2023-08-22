@@ -1,9 +1,10 @@
 # Rede social de séries (filmes e livros posteriormente)
 
-Desenvolver em Java um sistema de séries de Tv. Cada série contém seu nome, ano em que foi ao ar o primeiro episódio e o número de temporadas. 
+Desenvolver em Java, uma aplicação de console, de um sistema de séries de Tv.
+Cada série contém seu nome, ano em que foi ao ar o primeiro episódio e o número de temporadas.
 Nesse sistema o usuário poderá:
 - cadastrar uma série;
-- poderá listar as séries 
+- poderá listar as séries
 - procurar série por seu nome ou número de temporadas;
 - poderá atrelar uma nota e um comentário a série;
 - visualizar a média das notas atribuídas a série, bem como os comentários de cada usuário;
@@ -20,7 +21,7 @@ Nesse sistema o usuário poderá:
 - visualizar a média das notas da série<br>
 - adicionar/remover série a minha lista de séries<br>
 - adicionar/remover série favorita<br>
-- alterar status de uma das minhas séries<br>
+- alterar status de uma das minhas séries (favorita ou não)<br>
 
 <h3>Requisito não funcional</h3>
 - as séries podem ser listadas em ordem alfabética, ordem cronológica em relação ao ano em que foram ao ar e em ordem quantitativa de temporadas;<br>
@@ -29,8 +30,8 @@ Nesse sistema o usuário poderá:
 - a nota deve ter um valor mínimo de 1 e máximo de 5 (sendo 1 péssima, 2 Ruim, 3 Boa, 4 Muito boa, 5 ótima);<br>
 - Um comentário deve ter no mínimo 10 caracteres;<br>
 - Devo ter no máximo 5 séries favoritas;<br>
-<br><br>
-Possíveis status de série:
+  <br><br>
+  Possíveis status de série:
 - QUERO VER (inicial)
 - ESTOU VENDO
 - JA VI
@@ -41,20 +42,18 @@ Notas possíveis:
 - BOA = 3
 - MUITO BOA = 4
 - ÓTIMA = 5
-  
+
 O banco de dados a ser utilizado fica a critério do desenvolvedor.
 
 Caso o banco seja MySQL:
 <h2>O arquivo database.sql </h2>
 Irá criar as tabelas, adicionará algumas séries, usuários, notas e comentários de usuários.
-A partir do arquivo percebee-se que vão existir 4 tabelas:
+A partir do arquivo percebe-se que vão existir 4 tabelas:
 
- - tabela de séries
- - tabela de usuários (o usuário "logado" será o com identificador igual a 1)
- - tabela de notas das séries
- - tabela de séries favoritas
+- tabela de séries
+- tabela de usuários (o usuário "logado" será o com identificador igual a 1)
+- tabela de notas das séries
+- tabela de minhas séries
 
-
-
-
+Obs: Todas as dependências necessárias já estão no pom.xml caso seja MySQL.
 
