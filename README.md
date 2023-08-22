@@ -13,23 +13,23 @@ Nesse sistema o usuário poderá:
 
 
 <h3>Requisitos Funcionais</h3>
-- cadastrar série
-- listar série
-- procurar série por nome ou número de temporadas
-- adicionar uma nota e um comentário a série
-- visualizar a média das notas da série
-- adicionar/remover série a minha lista de séries
-- adicionar/remover série favorita
-- alterar status de uma das minhas séries
+- cadastrar série<br>
+- listar série<br>
+- procurar série por nome ou número de temporadas<br>
+- adicionar uma nota e um comentário a série<br>
+- visualizar a média das notas da série<br>
+- adicionar/remover série a minha lista de séries<br>
+- adicionar/remover série favorita<br>
+- alterar status de uma das minhas séries<br>
 
 <h3>Requisito não funcional</h3>
-- as séries podem ser listadas em ordem alfabética, ordem cronológica em relação ao ano em que foram ao ar e em ordem quantitativa de temporadas;
-- o status das séries do usuário é transacional, logo ele pode marcar ela na ordem de: QUERO VER -> ESTOU VENDO -> JA VI ou vice versa (QUERO VER <- ESTOU VENDO <- JA VI), não é possível alterar de QUERO VER -> JA VI, ou vice versa.
-- Quando adiciono uma série na minha lista de séries ela inicializa com o valor de "QUERO VER";
-- a nota deve ter um valor mínimo de 1 e máximo de 5 (sendo 1 péssima, 2 Ruim, 3 Boa, 4 Muito boa, 5 ótima);
-- Um comentário deve ter no mínimo 10 caracteres;
-- Devo ter no máximo 5 séries favoritas;
-
+- as séries podem ser listadas em ordem alfabética, ordem cronológica em relação ao ano em que foram ao ar e em ordem quantitativa de temporadas;<br>
+- o status das séries do usuário é transacional, logo ele pode marcar ela na ordem de: QUERO VER -> ESTOU VENDO -> JA VI ou vice versa (QUERO VER <- ESTOU VENDO <- JA VI), não é possível alterar de QUERO VER -> JA VI, ou vice versa;<br>
+- Quando adiciono uma série na minha lista de séries ela inicializa com o valor de "QUERO VER";<br>
+- a nota deve ter um valor mínimo de 1 e máximo de 5 (sendo 1 péssima, 2 Ruim, 3 Boa, 4 Muito boa, 5 ótima);<br>
+- Um comentário deve ter no mínimo 10 caracteres;<br>
+- Devo ter no máximo 5 séries favoritas;<br>
+<br><br>
 Possíveis status de série:
 - QUERO VER (inicial)
 - ESTOU VENDO
