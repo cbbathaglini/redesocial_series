@@ -2,7 +2,6 @@
 
 
 Desenvolver em Java, uma aplicação de console, de um sistema de séries de Tv. 
-Cada série contém seu nome, ano em que foi ao ar o primeiro episódio e o número de temporadas. 
 
 Nesse sistema o usuário poderá:
 - cadastrar uma série;
@@ -53,10 +52,10 @@ O  arquivo database.sql irá criar as tabelas, adicionará algumas séries, usu�
 A partir do arquivo percebe-se que vão existir 4 tabelas:
 
 
-- tabela de séries
-- tabela de usuários (o usuário "logado" será o com identificador igual a 1)
-- tabela de notas das séries
-- tabela de minhas séries
+- tabela de séries (cada série contém seu nome, ano em que foi ao ar o primeiro episódio e o número de temporadas)
+- tabela de usuários (o usuário "logado" será o com identificador igual a 1) (cada usuário terá um nome e um email)
+- tabela de notas das séries ( sobre as ações envolvendo nota_serie: existirá o identificador da série, o valor da nota (1-5) e um comentário que pode ser nulo, mas que se preenchido deverá ter no mínimo 10 caracteres)
+- tabela de minhas séries  (sobre as ações envolvendo minha_série: existirá o identificador do usuário que será sempre 1, o identificador da série e a informação se a série é favorita ou não)
 
 Obs: Todas as dependências necessárias já estão no pom.xml caso seja MySQL.
 
