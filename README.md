@@ -47,9 +47,9 @@ Notas possíveis:
 
 O banco de dados a ser utilizado fica a critério do desenvolvedor.
 
-Caso o banco seja MySQL:
-<h2>O arquivo database.sql </h2>
-Irá criar as tabelas, adicionará algumas séries, usuários, notas e comentários de usuários.
+
+<h2>Caso o banco seja MySQL</h2>
+O  arquivo database.sql irá criar as tabelas, adicionará algumas séries, usuários, notas e comentários de usuários.
 A partir do arquivo percebe-se que vão existir 4 tabelas:
 
 
