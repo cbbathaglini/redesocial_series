@@ -26,17 +26,28 @@ Nesse sistema o usuário poderá:
 - as séries podem ser listadas em ordem alfabética, ordem cronológica em relação ao ano em que foram ao ar e em ordem quantitativa de temporadas;
 - o status das séries do usuário é transacional, logo ele pode marcar ela na ordem de: QUERO VER -> ESTOU VENDO -> JA VI ou vice versa (QUERO VER <- ESTOU VENDO <- JA VI), não é possível alterar de QUERO VER -> JA VI, ou vice versa.
 - Quando adiciono uma série na minha lista de séries ela inicializa com o valor de "QUERO VER";
-- a nota deve ter um valor mínimo de 0 e máximo de 5 (sendo 0 péssima e 5 ótima);
+- a nota deve ter um valor mínimo de 1 e máximo de 5 (sendo 1 péssima, 2 Ruim, 3 Boa, 4 Muito boa, 5 ótima);
 - Um comentário deve ter no mínimo 10 caracteres;
 - Devo ter no máximo 5 séries favoritas;
 
+Possíveis status de série:
+- QUERO VER (inicial)
+- ESTOU VENDO
+- JA VI
+
+Notas possíveis:
+- PÉSSIMA = 1
+- RUIM = 2
+- BOA = 3
+- MUITO BOA = 4
+- ÓTIMA = 5
   
 O banco de dados a ser utilizado fica a critério do desenvolvedor.
 
 Caso o banco seja MySQL:
 <h2>O arquivo database.sql </h2>
 Irá criar as tabelas, adicionará algumas séries, usuários, notas e comentários de usuários.
-A partir do arquivo percebee-se que vão existir 3 tabelas:
+A partir do arquivo percebee-se que vão existir 4 tabelas:
 
  - tabela de séries
  - tabela de usuários (o usuário "logado" será o com identificador igual a 1)
