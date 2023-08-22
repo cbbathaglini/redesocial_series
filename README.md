@@ -52,19 +52,12 @@ Caso o banco seja MySQL:
 Irá criar as tabelas, adicionará algumas séries, usuários, notas e comentários de usuários.
 A partir do arquivo percebe-se que vão existir 4 tabelas:
 
-<<<<<<< HEAD
+
 - tabela de séries
 - tabela de usuários (o usuário "logado" será o com identificador igual a 1)
 - tabela de notas das séries
 - tabela de minhas séries
 
 Obs: Todas as dependências necessárias já estão no pom.xml caso seja MySQL.
-=======
- - tabela de séries
- - tabela de usuários (o usuário "logado" será o com identificador igual a 1)
- - tabela de notas das séries
- - tabela de minhas séries
-
-Obs: Todas as dependências necessárias já estão no pom.xml
 
 
