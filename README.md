@@ -21,7 +21,7 @@ Nesse sistema o usuário poderá:
 - visualizar a média das notas da série<br>
 - adicionar/remover série a minha lista de séries<br>
 - adicionar/remover série favorita<br>
-- alterar status de uma das minhas séries<br>
+- alterar status de uma das minhas séries (favorita ou não)<br>
 
 <h3>Requisito não funcional</h3>
 - as séries podem ser listadas em ordem alfabética, ordem cronológica em relação ao ano em que foram ao ar e em ordem quantitativa de temporadas;<br>
