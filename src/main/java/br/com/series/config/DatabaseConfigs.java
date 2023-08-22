@@ -1,4 +1,4 @@
-package br.com.entretenimento.config;
+package br.com.series.config;
 
 public class DatabaseConfigs {
     protected static final String URL = "jdbc:mysql://localhost:3306/redesocial_series";

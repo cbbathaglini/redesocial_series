@@ -1,4 +1,4 @@
-package br.com.entretenimento.config;
+package br.com.series.config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

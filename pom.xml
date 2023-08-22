@@ -9,7 +9,7 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
     <version>1.0-SNAPSHOT</version>
-    <name>rede_social_entretenimento</name>
+    <name>rede_social_series</name>
     <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>
