@@ -53,7 +53,7 @@ A partir do arquivo percebe-se que vão existir 4 tabelas:
  - tabela de séries
  - tabela de usuários (o usuário "logado" será o com identificador igual a 1)
  - tabela de notas das séries
- - tabela de séries favoritas
+ - tabela de minhas séries
 
 Obs: Todas as dependências necessárias já estão no pom.xml
 
