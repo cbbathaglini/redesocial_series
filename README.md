@@ -1,8 +1,16 @@
-# Rede social de séries (filmes e livros posteriormente)
+# Rede social de séries 
 
+<h2>Será necessário</h2>
+Java 17
 
+<h2>Não poderá</h2>
+- Utilizar Frameworks (como Spring, Hibernate etc)
+
+<h2>Poderá</h2>
+- Ser utilizado JUnit para testes
+
+<h1>Sobre o desenvolvimento</h1>
 Desenvolver em Java, uma aplicação de console, de um sistema de séries de Tv. 
-Cada série contém seu nome, ano em que foi ao ar o primeiro episódio e o número de temporadas. 
 
 Nesse sistema o usuário poderá:
 - cadastrar uma série;
@@ -28,10 +36,10 @@ Nesse sistema o usuário poderá:
 <h3>Requisito não funcional</h3>
 - as séries podem ser listadas em ordem alfabética, ordem cronológica em relação ao ano em que foram ao ar e em ordem quantitativa de temporadas;<br>
 - o status das séries do usuário é transacional, logo ele pode marcar ela na ordem de: QUERO VER -> ESTOU VENDO -> JA VI ou vice versa (QUERO VER <- ESTOU VENDO <- JA VI), não é possível alterar de QUERO VER -> JA VI, ou vice versa;<br>
-- Quando adiciono uma série na minha lista de séries ela inicializa com o valor de "QUERO VER";<br>
+- Quando o usuário adicionar uma série na 'minha lista de séries' essa série será inicializada com o valor de "QUERO VER";<br>
 - a nota deve ter um valor mínimo de 1 e máximo de 5 (sendo 1 péssima, 2 Ruim, 3 Boa, 4 Muito boa, 5 ótima);<br>
 - Um comentário deve ter no mínimo 10 caracteres;<br>
-- Devo ter no máximo 5 séries favoritas;<br>
+- o usuário deve ter no máximo 5 séries favoritas;<br>
   <br><br>
   Possíveis status de série:
 - QUERO VER (inicial)
@@ -45,19 +53,21 @@ Notas possíveis:
 - MUITO BOA = 4
 - ÓTIMA = 5
 
+<h2>Testes</h2>
+Você também deve criar testes end-to-end (e2e) coerentes com as funcionalidades que implementar nas classes.
+
+<h2>Banco de dados</h2>
 O banco de dados a ser utilizado fica a critério do desenvolvedor.
 
 
-<h2>Caso o banco seja MySQL</h2>
-O  arquivo database.sql irá criar as tabelas, adicionará algumas séries, usuários, notas e comentários de usuários.
-A partir do arquivo percebe-se que vão existir 4 tabelas:
-
-
-- tabela de séries
-- tabela de usuários (o usuário "logado" será o com identificador igual a 1)
-- tabela de notas das séries
-- tabela de minhas séries
-
+<h5>Caso o banco seja MySQL</h5>
+O  arquivo database.sql irá criar as tabelas, adicionará algumas séries, usuários, notas e comentários de usuários.<br>
+A partir do arquivo percebe-se que vão existir 4 tabelas:<br>
+- tabela de séries (cada série contém seu nome, ano em que foi ao ar o primeiro episódio e o número de temporadas)<br>
+- tabela de usuários (o usuário "logado" será o com identificador igual a 1) (cada usuário terá um nome e um email)<br>
+- tabela de notas das séries ( sobre as ações envolvendo nota_serie: existirá o identificador da série, o valor da nota (1-5) e um comentário que pode ser nulo, mas que se preenchido deverá ter no mínimo 10 caracteres)<br>
+- tabela de minhas séries  (sobre as ações envolvendo minha_série: existirá o identificador do usuário que será sempre 1, o identificador da série e a informação se a série é favorita ou não)<br>
+<br>
 Obs: Todas as dependências necessárias já estão no pom.xml caso seja MySQL.
 
 
