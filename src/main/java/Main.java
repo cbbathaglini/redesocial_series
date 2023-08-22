@@ -1,3 +1,5 @@
+import br.com.series.model.Usuario;
+
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -12,6 +14,8 @@ public class Main {
         Scanner in = new Scanner(System.in);
         String option = "-1";
 
+        //fixando o  usuário
+        Usuario usuario = new Usuario(1,"euaqui","euaqui@email.com");
         while(!"12".equals(option)){
             all_options();
             System.out.println("Informe uma opção: ");
@@ -27,6 +31,7 @@ public class Main {
 
                 case "7": //Adicionar série na minha lista de séries
                     // TODO
+                    // usar o objeto usuario da linha 18
                     // adicionar
                     // depois de adicionar, exiba a sua lista de séries
                     break;
