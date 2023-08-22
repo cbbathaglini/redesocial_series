@@ -1,6 +1,15 @@
-# Rede social de séries (filmes e livros posteriormente)
+# Rede social de séries 
 
+<h2>Será necessário</h2>
+Java 17
 
+<h2>Não poderá</h2>
+- Utilizar Frameworks (como Spring, Hibernate etc)
+
+<h2>Poderá</h2>
+- Ser utilizado JUnit para testes
+
+<h1>Sobre o desenvolvimento</h1>
 Desenvolver em Java, uma aplicação de console, de um sistema de séries de Tv. 
 
 Nesse sistema o usuário poderá:
@@ -44,10 +53,14 @@ Notas possíveis:
 - MUITO BOA = 4
 - ÓTIMA = 5
 
+<h2>Testes</h2>
+Você também deve criar testes end-to-end (e2e) coerentes com as funcionalidades que implementar nas classes.
+
+<h2>Banco de dados</h2>
 O banco de dados a ser utilizado fica a critério do desenvolvedor.
 
 
-<h2>Caso o banco seja MySQL</h2>
+<h5>Caso o banco seja MySQL</h5>
 O  arquivo database.sql irá criar as tabelas, adicionará algumas séries, usuários, notas e comentários de usuários.
 A partir do arquivo percebe-se que vão existir 4 tabelas:
 
