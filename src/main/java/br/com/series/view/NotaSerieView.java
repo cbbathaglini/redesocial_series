@@ -31,4 +31,16 @@ public class NotaSerieView {
                              Integer.parseInt(nota),
                              comentario);
     }
+
+
+    public NotaSerie informarSerie(){
+        System.out.println("Informe a série:");
+        String id =  scanner.nextLine();
+        Serie serie = new Serie();
+        serie.setId(Integer.parseInt(id));
+
+        NotaSerie notaSerie = new NotaSerie();
+        notaSerie.setSerie(serie);
+        return notaSerie;
+    }
 }

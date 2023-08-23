@@ -4,6 +4,8 @@ import br.com.series.model.notaserie.NotaSerie;
 import br.com.series.repository.NotaSerieRepository;
 import br.com.series.view.NotaSerieView;
 
+import java.util.List;
+
 public class NotaSerieService {
 
     private NotaSerieRepository notaSerieRepository;
@@ -17,4 +19,15 @@ public class NotaSerieService {
         NotaSerie notaSerie = notaSerieView.adicionarNotaComentario();
         return notaSerieRepository.cadastrar(notaSerie);
     }
+    public float visualizarMedia(){
+        NotaSerie notaSerie = notaSerieView.informarSerie();
+        return notaSerieRepository.mediaNota(notaSerie);
+
+    }
+    public List<NotaSerie> visualizarComentariosNotas(){
+        NotaSerie notaSerie = notaSerieView.informarSerie();
+        return notaSerieRepository.listar(notaSerie);
+    }
+
+
 }

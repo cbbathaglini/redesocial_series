@@ -53,6 +53,26 @@ public class Main {
                     System.out.println(notaSerie);
                     break;
 
+                case "5":
+                    float mediaNotas = notaSerieService.visualizarMedia();
+                    System.out.println("Média das notas: " + mediaNotas);
+                    break;
+
+                case "6":
+                    List<NotaSerie> notaSerieList = notaSerieService.visualizarComentariosNotas();
+                    if(notaSerieList.size() > 0) {
+                        System.out.println("Nome série: " + notaSerieList.get(0).getSerie().getNome());
+                        System.out.println("---------------");
+
+                        for (NotaSerie item : notaSerieList) {
+                            System.out.println("Nota: " + item.getNota());
+                            System.out.println("Comentário: " + item.getComentario());
+                            System.out.println("---------------");
+                        }
+                    }
+
+                    break;
+
                 case "7": //Adicionar série na minha lista de séries
                     // TODO
                     // usar o objeto usuario da linha 18
@@ -83,8 +103,8 @@ public class Main {
         System.out.println(" 2 - Listar séries");
         System.out.println(" 3 - Procurar série");
         System.out.println(" 4 - Adicionar uma nota e um comentário para a série");
-        System.out.println(" 5 - Procurar série");
-        System.out.println(" 6 - Visualizar média das notas de uma série");
+        System.out.println(" 5 - Visualizar média das notas de uma série");
+        System.out.println(" 6 - Visualizar notas e comentários de uma série");
         System.out.println(" 7 - Adicionar série na minha lista de séries");
         System.out.println(" 8 - Remover série da minha lista de séries");
         System.out.println(" 9 - Adicionar série na minha lista de séries favoritas");
