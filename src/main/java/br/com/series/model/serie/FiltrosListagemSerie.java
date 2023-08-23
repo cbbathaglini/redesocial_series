@@ -1,6 +1,6 @@
 package br.com.series.model.serie;
 
-public enum FiltrosSerie {
+public enum FiltrosListagemSerie {
     ALFABETICAMENTE_A_Z(1),
     ALFABETICAMENTE_Z_A(2),
     CRONOLOGICA_MAIS_RECENTE(3),
@@ -10,13 +10,13 @@ public enum FiltrosSerie {
 
     public Integer posicao;
 
-    private FiltrosSerie(Integer posicao){ this.posicao = posicao;}
+    private FiltrosListagemSerie(Integer posicao){ this.posicao = posicao;}
 
     public Integer getPosicao(){
         return posicao;
     }
-    public static FiltrosSerie getFiltro(Integer posicao){
-        for(FiltrosSerie filtro: FiltrosSerie.values()){
+    public static FiltrosListagemSerie getFiltro(Integer posicao){
+        for(FiltrosListagemSerie filtro: FiltrosListagemSerie.values()){
             if(filtro.posicao == posicao){
                 return filtro;
             }

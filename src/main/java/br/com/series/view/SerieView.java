@@ -1,6 +1,7 @@
 package br.com.series.view;
 
-import br.com.series.model.serie.FiltrosSerie;
+import br.com.series.model.serie.FiltrosListagemSerie;
+import br.com.series.model.serie.FiltrosProcuraSerie;
 import br.com.series.model.serie.Serie;
 
 import java.util.Scanner;
@@ -23,7 +24,7 @@ public class SerieView {
         return new Serie(nome, Integer.parseInt(temporadas),Integer.parseInt(ano_lancamento));
     }
 
-    public FiltrosSerie filtrosListar(){
+    public FiltrosListagemSerie filtrosListar(){
 
         System.out.println("1 - Ordem alfabética (A_z)");
         System.out.println("2 - Ordem alfabética (z_A");
@@ -34,7 +35,27 @@ public class SerieView {
         System.out.println("Informe uma das opções acima: ");
         String posicao =  scanner.nextLine();
 
-        return FiltrosSerie.getFiltro(Integer.parseInt(posicao));
+        return FiltrosListagemSerie.getFiltro(Integer.parseInt(posicao));
 
     }
+
+    public FiltrosProcuraSerie procurarFiltro(){
+
+        System.out.println("1 - Por nome");
+        System.out.println("2 - Por número de temporadas");
+        System.out.println("3 - Pelo ano");
+        System.out.println("Informe uma das opções acima: ");
+        String posicao =  scanner.nextLine();
+
+        return FiltrosProcuraSerie.getFiltro(Integer.parseInt(posicao));
+
+    }
+
+    public String procurar(){
+
+        System.out.println("Informe o valor que deseja pesquisar:");
+        return  scanner.nextLine();
+
+    }
+
 }

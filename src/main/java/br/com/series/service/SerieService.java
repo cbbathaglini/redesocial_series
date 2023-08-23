@@ -1,6 +1,7 @@
 package br.com.series.service;
 
-import br.com.series.model.serie.FiltrosSerie;
+import br.com.series.model.serie.FiltrosListagemSerie;
+import br.com.series.model.serie.FiltrosProcuraSerie;
 import br.com.series.model.serie.Serie;
 import br.com.series.repository.SerieRepository;
 import br.com.series.view.SerieView;
@@ -31,8 +32,15 @@ public class SerieService {
 
     public  List<Serie> listar(){
         List<Serie> serieList = new ArrayList<>();
-        FiltrosSerie filtrosSerie = serieView.filtrosListar();
+        FiltrosListagemSerie filtrosSerie = serieView.filtrosListar();
         return this.serieRepository.listar(filtrosSerie);
+    }
+
+    public List<Serie> procurar(){
+        FiltrosProcuraSerie filtro = this.serieView.procurarFiltro();
+        String valor = this.serieView.procurar();
+
+        return this.serieRepository.procurar(filtro,valor);
     }
 
 
