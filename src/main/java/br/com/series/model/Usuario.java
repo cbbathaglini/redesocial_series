@@ -5,6 +5,7 @@ public class Usuario {
     private String name;
     private String email;
 
+    public Usuario(){}
     public Usuario(Integer id, String name, String email){
         this.id = id;
         this.name = name;
@@ -13,6 +14,16 @@ public class Usuario {
 
     public Integer getId(){
         return this.id;
+    }
+    public void setId(Integer id){
+        this.id = id;
+    }
+
+    public String toString(){
+        return "Usuario [id= "+this.id+
+                " ,name="+this.name+
+                " ,email="+this.email+
+                "]\n";
     }
 
 }

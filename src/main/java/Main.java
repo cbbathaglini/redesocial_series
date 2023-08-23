@@ -1,6 +1,8 @@
 import br.com.series.model.MenuOpcoes;
 import br.com.series.model.Usuario;
+import br.com.series.model.notaserie.NotaSerie;
 import br.com.series.model.serie.Serie;
+import br.com.series.service.NotaSerieService;
 import br.com.series.service.SerieService;
 
 import java.awt.*;
@@ -23,7 +25,8 @@ public class Main {
         //fixando o  usuário
         Usuario usuario = new Usuario(1,"euaqui","euaqui@email.com");
 
-        SerieService serviceService = new SerieService();
+        SerieService serieService = new SerieService();
+        NotaSerieService notaSerieService = new NotaSerieService();
 
         while(!"12".equals(option)){
             all_options();
@@ -31,18 +34,23 @@ public class Main {
             option = in.nextLine();
             switch (option) {
                 case "1": //cadastrar uma série
-                    serviceService.cadastrar();
+                    serieService.cadastrar();
                     break;
 
                 case "2":
-                    List<Serie> serieList = serviceService.listar();
+                    List<Serie> serieList = serieService.listar();
                     System.out.println(serieList);
                     break;
 
 
                 case "3":
-                    List<Serie>  seriesProcuradas = serviceService.procurar();
+                    List<Serie>  seriesProcuradas = serieService.procurar();
                     System.out.println(seriesProcuradas);
+                    break;
+
+                case "4":
+                    NotaSerie notaSerie = notaSerieService.adicionar();
+                    System.out.println(notaSerie);
                     break;
 
                 case "7": //Adicionar série na minha lista de séries
