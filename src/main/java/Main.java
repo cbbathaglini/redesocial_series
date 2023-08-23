@@ -1,7 +1,9 @@
+import br.com.series.model.MenuOpcoes;
 import br.com.series.model.Usuario;
 import br.com.series.model.serie.Serie;
 import br.com.series.service.SerieService;
 
+import java.awt.*;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
@@ -13,6 +15,7 @@ public class Main {
     }
 
     public static void options() throws SQLException, ClassNotFoundException {
+
 
         Scanner in = new Scanner(System.in);
         String option = "-1";
@@ -34,6 +37,12 @@ public class Main {
                 case "2":
                     List<Serie> serieList = serviceService.listar();
                     System.out.println(serieList);
+                    break;
+
+
+                case "3":
+                    List<Serie>  seriesProcuradas = serviceService.procurar();
+                    System.out.println(seriesProcuradas);
                     break;
 
                 case "7": //Adicionar série na minha lista de séries
