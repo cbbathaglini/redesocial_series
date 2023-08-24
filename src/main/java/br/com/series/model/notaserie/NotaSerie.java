@@ -17,6 +17,13 @@ public class NotaSerie {
 
     }
 
+    public NotaSerie(Integer id,Usuario usuario,Serie serie, Integer nota, String comentario){
+        this.id = id;
+        this.usuario = usuario;
+        this.serie = serie;
+        this.nota = nota;
+        this.comentario = comentario;
+    }
     public NotaSerie(Usuario usuario,Serie serie, Integer nota, String comentario){
         this.usuario = usuario;
         this.serie = serie;
@@ -26,6 +33,10 @@ public class NotaSerie {
 
     public void setId(Integer id){
         this.id = id;
+    }
+
+    public void setSerie(Serie serie){
+        this.serie = serie;
     }
     public Integer getId(){
         return this.id;
