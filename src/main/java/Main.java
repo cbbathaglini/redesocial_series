@@ -34,7 +34,7 @@ public class Main {
         MinhasSeriesService minhasSeriesService = new MinhasSeriesService();
 
         List<MinhasSeries> minhasSeriesList = new ArrayList<>();
-        while(!"12".equals(option)){
+        while(!"13".equals(option)){
             all_options();
             System.out.println("Informe uma opção: ");
             option = in.nextLine();
@@ -96,10 +96,27 @@ public class Main {
                     System.out.println(minhasSeriesList);
                     break;
 
-                case "....":
+                case "10": //Listar séries favoritas
+                    minhasSeriesList = minhasSeriesService.listarMinhasSeriesFavoritas();
+                    System.out.println(minhasSeriesList);
                     break;
 
-                case "12":
+                case "11": //Adicionar série na minha lista de séries favoritas
+                    minhasSeriesService.alterarFavorita(true);
+                    minhasSeriesList = minhasSeriesService.listarMinhasSeriesFavoritas();
+                    System.out.println(minhasSeriesList);
+                    break;
+
+                case "12": //Remover série da minha lista de séries
+                    minhasSeriesService.alterarFavorita(false);
+                    minhasSeriesList = minhasSeriesService.listarMinhasSeriesFavoritas();
+                    System.out.println(minhasSeriesList);
+                    break;
+
+                case "13": //Alterar situação de uma das minhas séries
+                    break;
+
+                case "14":
                     System.out.println("Finalizando...");
                     System.exit(1);
                     break;
@@ -118,10 +135,11 @@ public class Main {
         System.out.println(" 7 - Listar minha lista de séries");
         System.out.println(" 8 - Adicionar série na minha lista de séries");
         System.out.println(" 9 - Remover série da minha lista de séries");
-        System.out.println(" 10 - Adicionar série na minha lista de séries favoritas");
-        System.out.println(" 11 - Remover série da minha lista de séries");
-        System.out.println(" 12 - Alterar situação de uma das minhas séries");
-        System.out.println(" 13 - Sair");
+        System.out.println(" 10 - Listar séries favoritas");
+        System.out.println(" 11 - Adicionar série na minha lista de séries favoritas");
+        System.out.println(" 12 - Remover série da minha lista de séries favoritas");
+        System.out.println(" 13 - Alterar situação de uma das minhas séries");
+        System.out.println(" 14 - Sair");
         System.out.println("------------------------------------------");
     }
 

@@ -21,6 +21,14 @@ public class MinhasSeriesView {
         minhasSeries.setId(Integer.parseInt(id));
         return minhasSeries;
     }
+
+    public Serie informarIdSeries(){
+        Serie serie = new Serie();
+        System.out.println("Informe o identificador da série:");
+        String id = scanner.nextLine();
+        serie.setId(Integer.parseInt(id));
+        return serie;
+    }
     public MinhasSeries informarIdSituacao(){
         MinhasSeries minhasSeries = new MinhasSeries();
         System.out.println("Informe o identificador da série:");
