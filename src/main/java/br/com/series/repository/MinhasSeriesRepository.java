@@ -80,7 +80,7 @@ public class MinhasSeriesRepository {
 
 
             while(resultSet.next()){
-                MinhasSeries minhasSeries = MinhasSeriesDBConverter.converter(resultSet);
+                MinhasSeries minhasSeries = MinhasSeriesDBConverter.converter(resultSet, true, true);
                 minhasSeriesList.add(minhasSeries);
             }
 
@@ -158,7 +158,7 @@ public class MinhasSeriesRepository {
 
             List<MinhasSeries> minhasSeriesList = new ArrayList<>();
             while(resultSet.next()){
-                minhasSeriesList.add(MinhasSeriesDBConverter.converter(resultSet));
+                minhasSeriesList.add(MinhasSeriesDBConverter.converter(resultSet,true,true));
             }
             this.database.close_connection();
             return minhasSeriesList;
@@ -170,4 +170,41 @@ public class MinhasSeriesRepository {
     }
 
 
+    public MinhasSeries consultarByIdSerie(MinhasSeries minhasSeries){
+        try{
+            this.database.open_connection();
+            String query = " SELECT * FROM MINHAS_SERIES WHERE MINHAS_SERIES.idSerie = ?";
+            PreparedStatement preparedStatement = this.database.executarSQL(query,null);
+            preparedStatement.setInt(1, minhasSeries.getSerie().getId());
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()){
+                minhasSeries = MinhasSeriesDBConverter.converter(resultSet,false,false);
+            }
+
+            this.database.close_connection();
+            return minhasSeries;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void alterarSituacao(MinhasSeries minhasSeries){
+        try{
+            String query = "UPDATE MINHAS_SERIES SET situacao = ? where idSerie =?";
+            this.database.open_connection();
+            PreparedStatement preparedStatement = this.database.executarSQL(query,null);
+            preparedStatement.setString(1, minhasSeries.getSituacao().toString());
+            preparedStatement.setInt(2, minhasSeries.getSerie().getId());
+            int linhasAfetadas = preparedStatement.executeUpdate();
+
+            this.database.close_connection();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

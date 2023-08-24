@@ -105,4 +105,20 @@ public class MinhasSeriesService {
 
     }
 
+    public MinhasSeries alterarSituacao(){
+
+        Usuario usuario = new Usuario();
+        usuario.setId(1); //pegar pela sessão futuramente
+
+        Serie serie = this.minhasSeriesView.informarIdSeries();
+        MinhasSeries minhasSeries = new MinhasSeries(usuario,serie,null,null);
+        minhasSeries = this.minhasSeriesRepository.consultarByIdSerie(minhasSeries);
+
+        minhasSeries.setSituacao(this.minhasSeriesView.informarSituacoes(minhasSeries.getSituacao()));
+        this.minhasSeriesRepository.alterarSituacao(minhasSeries);
+        return minhasSeries;
+
+
+    }
+
 }

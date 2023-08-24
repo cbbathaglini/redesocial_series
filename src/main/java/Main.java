@@ -34,7 +34,7 @@ public class Main {
         MinhasSeriesService minhasSeriesService = new MinhasSeriesService();
 
         List<MinhasSeries> minhasSeriesList = new ArrayList<>();
-        while(!"13".equals(option)){
+        while(!"14".equals(option)){
             all_options();
             System.out.println("Informe uma opção: ");
             option = in.nextLine();
@@ -114,6 +114,7 @@ public class Main {
                     break;
 
                 case "13": //Alterar situação de uma das minhas séries
+                    minhasSeriesService.alterarSituacao();
                     break;
 
                 case "14":
