@@ -13,10 +13,13 @@ import java.sql.SQLException;
 public class MinhasSeriesDBConverter {
 
 
-    public static MinhasSeries converter(ResultSet resultSet) throws SQLException {
+    public static MinhasSeries converter(ResultSet resultSet, Boolean withSerie, Boolean withUsuario) throws SQLException {
 
         int idMinhasSeries = resultSet.getInt(MinhasSeriesDBConstants.ID_MINHAS_SERIES);
-        Serie serie = SerieDBConverter.converter(resultSet);
+        Serie serie = new Serie();
+        serie.setId(resultSet.getInt(MinhasSeriesDBConstants.ID_SERIE));
+        if(withSerie) serie = SerieDBConverter.converter(resultSet);
+
         int idUsuario = resultSet.getInt("idUsuario");
         Usuario usuario = new Usuario(idUsuario);
 
