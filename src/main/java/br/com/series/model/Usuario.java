@@ -6,6 +6,10 @@ public class Usuario {
     private String email;
 
     public Usuario(){}
+
+    public Usuario(Integer id){
+        this.id = id;
+    }
     public Usuario(Integer id, String name, String email){
         this.id = id;
         this.name = name;

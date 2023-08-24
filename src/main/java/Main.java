@@ -1,16 +1,20 @@
 import br.com.series.model.MenuOpcoes;
 import br.com.series.model.Usuario;
+import br.com.series.model.minhasseries.MinhasSeries;
 import br.com.series.model.notaserie.NotaSerie;
 import br.com.series.model.serie.Serie;
+import br.com.series.service.MinhasSeriesService;
 import br.com.series.service.NotaSerieService;
 import br.com.series.service.SerieService;
 
 import java.awt.*;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         options();
@@ -27,7 +31,9 @@ public class Main {
 
         SerieService serieService = new SerieService();
         NotaSerieService notaSerieService = new NotaSerieService();
+        MinhasSeriesService minhasSeriesService = new MinhasSeriesService();
 
+        List<MinhasSeries> minhasSeriesList = new ArrayList<>();
         while(!"12".equals(option)){
             all_options();
             System.out.println("Informe uma opção: ");
@@ -73,17 +79,21 @@ public class Main {
 
                     break;
 
-                case "7": //Adicionar série na minha lista de séries
-                    // TODO
-                    // usar o objeto usuario da linha 18
-                    // adicionar
-                    // depois de adicionar, exiba a sua lista de séries
+                case "7": //Listar minha lista de séries
+                    minhasSeriesList = minhasSeriesService.listarMinhasSeries();
+                    System.out.println(minhasSeriesList);
                     break;
 
-                case "8": //REMOVER série na minha lista de séries
-                    // TODO
-                    // remover
-                    // depois de remover, exiba a sua lista de séries
+                case "8": //Adicionar série na minha lista de séries
+                    minhasSeriesService.adicionar();
+                    minhasSeriesList = minhasSeriesService.listarMinhasSeries();
+                    System.out.println(minhasSeriesList);
+                    break;
+
+                case "9": //REMOVER série na minha lista de séries
+                    minhasSeriesService.remover();
+                    minhasSeriesList = minhasSeriesService.listarMinhasSeries();
+                    System.out.println(minhasSeriesList);
                     break;
 
                 case "....":
@@ -105,12 +115,13 @@ public class Main {
         System.out.println(" 4 - Adicionar uma nota e um comentário para a série");
         System.out.println(" 5 - Visualizar média das notas de uma série");
         System.out.println(" 6 - Visualizar notas e comentários de uma série");
-        System.out.println(" 7 - Adicionar série na minha lista de séries");
-        System.out.println(" 8 - Remover série da minha lista de séries");
-        System.out.println(" 9 - Adicionar série na minha lista de séries favoritas");
-        System.out.println(" 10 - Remover série da minha lista de séries");
-        System.out.println(" 11 - Alterar situação de uma das minhas séries");
-        System.out.println(" 12 - Sair");
+        System.out.println(" 7 - Listar minha lista de séries");
+        System.out.println(" 8 - Adicionar série na minha lista de séries");
+        System.out.println(" 9 - Remover série da minha lista de séries");
+        System.out.println(" 10 - Adicionar série na minha lista de séries favoritas");
+        System.out.println(" 11 - Remover série da minha lista de séries");
+        System.out.println(" 12 - Alterar situação de uma das minhas séries");
+        System.out.println(" 13 - Sair");
         System.out.println("------------------------------------------");
     }
 
