@@ -1,5 +1,6 @@
 package br.com.series.service;
 
+import br.com.series.model.Situacao;
 import br.com.series.model.Usuario;
 import br.com.series.model.minhasseries.MinhasSeries;
 import br.com.series.model.serie.Serie;
@@ -67,7 +68,7 @@ public class MinhasSeriesService {
     }
 
 
-    public Serie adicionarFavorita() {
+    public Serie alterarFavorita(Boolean favorita) {
         try {
             //checar se já não tem 5 séries favoritas
             Usuario usuario = new Usuario();
@@ -78,16 +79,30 @@ public class MinhasSeriesService {
                 throw new Exception("O número de séries favoritas é igual a 5. Para adicionar mais séries você precisa remover uma de sua lista de séries favoritas");
             }
 
-            //se não tiver
-            //Serie serie = this.minhasSeriesView.informarId();
-            //MinhasSeries minhasSeries = new MinhasSeries(usuario.getId(), serie.getId(),);
-            //this.minhasSeriesRepository.adicionar(serie,usuario);
-            //int numeroSeriesFavoritas = this.minhasSeriesRepository.listarSeriesFavoritas();
 
+            Serie serie = this.minhasSeriesView.informarIdSeries();
+            // checar se ela está na lista de séries da pessoa para setar
+            MinhasSeries minhasSeries = new MinhasSeries(usuario, serie, null,favorita);
+            this.minhasSeriesRepository.alterarFavorita(minhasSeries);
             return new Serie();
         }catch (Exception e){
             throw new RuntimeException(e);
         }
 
     }
+
+    public List<MinhasSeries> listarMinhasSeriesFavoritas() {
+        try {
+            Usuario usuario = new Usuario();
+            usuario.setId(1); //pegar pela sessão futuramente
+
+            MinhasSeries minhasSeries = new MinhasSeries(usuario, null,null, true);
+
+            return this.minhasSeriesRepository.listarMinhasSeriesFavoritas(minhasSeries);
+        }catch (Exception e){
+            throw new RuntimeException(e);
+        }
+
+    }
+
 }

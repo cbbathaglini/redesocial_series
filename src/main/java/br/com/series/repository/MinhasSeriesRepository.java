@@ -114,4 +114,60 @@ public class MinhasSeriesRepository {
         }
 
     }
+
+    public MinhasSeries alterarFavorita( MinhasSeries minhasSeries){
+
+        try{
+            String query = " UPDATE MINHAS_SERIES SET MINHAS_SERIES.favorita = ? where MINHAS_SERIES.idSerie = ?";
+
+            this.database.open_connection();
+            PreparedStatement preparedStatement = this.database.executarSQL(query,null);
+            preparedStatement.setBoolean(1, minhasSeries.getFavorita());
+            preparedStatement.setInt(2, minhasSeries.getSerie().getId());
+            int linhasAfetadas = preparedStatement.executeUpdate();
+
+            if(linhasAfetadas == 0){
+                throw new Exception("A série informada não consta na lista de séries do usuário");
+            }
+            this.database.close_connection();
+            return  minhasSeries;
+        }catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public List<MinhasSeries> listarMinhasSeriesFavoritas(MinhasSeries minhasSeries){
+        try{
+            String query = "SELECT * FROM minhas_series, series " +
+                    " where " +
+                    " minhas_series.idSerie = series.idSerie and" +
+                    " minhas_series.idUsuario = ? and" +
+                    " minhas_series.favorita = ?";
+
+            this.database.open_connection();
+
+            PreparedStatement preparedStatement = this.database.executarSQL(query,null);
+            preparedStatement.setInt(1, minhasSeries.getUsuario().getId());
+            preparedStatement.setBoolean(2, minhasSeries.getFavorita());
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            List<MinhasSeries> minhasSeriesList = new ArrayList<>();
+            while(resultSet.next()){
+                minhasSeriesList.add(MinhasSeriesDBConverter.converter(resultSet));
+            }
+            this.database.close_connection();
+            return minhasSeriesList;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 }
