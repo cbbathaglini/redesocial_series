@@ -16,7 +16,7 @@ public class Main {
 
         //fixando o  usuário
         Usuario usuario = new Usuario(1,"euaqui","euaqui@email.com");
-        while(!"12".equals(option)){
+        while(!"14".equals(option)){
             all_options();
             System.out.println("Informe uma opção: ");
             option = in.nextLine();
