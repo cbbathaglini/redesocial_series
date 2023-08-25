@@ -51,6 +51,12 @@ CREATE TABLE minhas_series(
 );
 CREATE INDEX idx_id_usuario ON minhas_series (idUsuario);
 
-INSERT INTO minhas_series (idUsuario,idSerie,situacao,favorita) VALUES (2,4,"JA VI",TRUE);
-INSERT INTO minhas_series (idUsuario,idSerie,situacao,favorita) VALUES (2,5,"QUERO VER",null);
-INSERT INTO minhas_series (idUsuario,idSerie,situacao,favorita) VALUES (2,6,"ESTOU VENDO",TRUE);
+INSERT INTO minhas_series (idUsuario,idSerie,situacao,favorita) VALUES (2,4,"JA_VI",TRUE);
+INSERT INTO minhas_series (idUsuario,idSerie,situacao,favorita) VALUES (2,5,"QUERO_VER",null);
+INSERT INTO minhas_series (idUsuario,idSerie,situacao,favorita) VALUES (2,6,"ESTOU_VENDO",TRUE);
+
+
+
+
+
+
